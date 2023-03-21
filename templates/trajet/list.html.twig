@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <table class="table text-center">
+        <tr>
+            <th class="active text-center">Auteur</th>
+            <th class="active text-center">Ville de départ</th>
+            <th class="active text-center">Ville d'arrivée</th>
+            <th class="active text-center">Date Heure</th>
+            <th class="active text-center">Voiture</th>
+            <th class="active text-center">Nombre de place</th>
+            <th class="active text-center">Prix</th>
+        </tr>
+
+        {% for trajet in trajets %}
+            <tr>
+                <td><a href="#">{{ trajet.idUtilisateurAuteur}}</a></td>
+                <td>{{ trajet.villeDepart }}</td>
+                <td>{{ trajet.villeArrivee }}</td>
+                <td>{{ trajet.dateHeure }}</td>
+                <td>{{ trajet.voiture }}</td>
+                <td>{{ trajet.nbPlace }}</td>
+                <td>{{ trajet.prix }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
