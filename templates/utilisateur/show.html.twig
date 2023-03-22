@@ -12,6 +12,14 @@
                 <td>{{ utilisateur.id }}</td>
             </tr>
             <tr>
+                <th>Roles</th>
+                <td>{{ utilisateur.roles ? utilisateur.roles|json_encode : '' }}</td>
+            </tr>
+            <tr>
+                <th>Password</th>
+                <td>{{ utilisateur.password }}</td>
+            </tr>
+            <tr>
                 <th>Nom</th>
                 <td>{{ utilisateur.nom }}</td>
             </tr>
@@ -30,14 +38,6 @@
             <tr>
                 <th>ModeApp</th>
                 <td>{{ utilisateur.modeApp }}</td>
-            </tr>
-            <tr>
-                <th>Mdp</th>
-                <td>{{ utilisateur.mdp }}</td>
-            </tr>
-            <tr>
-                <th>Role</th>
-                <td>{{ utilisateur.role ? utilisateur.role|join(', ') : '' }}</td>
             </tr>
         </tbody>
     </table>

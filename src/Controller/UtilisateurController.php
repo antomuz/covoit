@@ -3,7 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Utilisateur;
-use App\Form\UtilisateurType;
+use App\Form\Utilisateur1Type;
 use App\Repository\UtilisateurRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -31,7 +31,7 @@ class UtilisateurController extends AbstractController
     public function new(Request $request, UtilisateurRepository $utilisateurRepository): Response
     {
         $utilisateur = new Utilisateur();
-        $form = $this->createForm(UtilisateurType::class, $utilisateur);
+        $form = $this->createForm(Utilisateur1Type::class, $utilisateur);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -60,7 +60,7 @@ class UtilisateurController extends AbstractController
      */
     public function edit(Request $request, Utilisateur $utilisateur, UtilisateurRepository $utilisateurRepository): Response
     {
-        $form = $this->createForm(UtilisateurType::class, $utilisateur);
+        $form = $this->createForm(Utilisateur1Type::class, $utilisateur);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {

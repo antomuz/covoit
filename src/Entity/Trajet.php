@@ -214,9 +214,5 @@ class Trajet
         return $this;
     }
 
-    public function __ToString () :  string
-    {
-        $val = $this->getVilleDepart()." ".$this->getVilleArrivee();
-        return $val;
-    }
+
 }

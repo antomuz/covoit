@@ -33,7 +33,6 @@ class Commentaire
      * @ORM\JoinColumn(nullable=false)
      */
     private $idTrajetConcerner;
-
     public function getId(): ?int
     {
         return $this->id;
