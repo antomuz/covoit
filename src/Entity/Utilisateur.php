@@ -74,6 +74,11 @@ class Utilisateur
      */
     private $commentaireDonner;
 
+    /**
+     * @ORM\Column(type="array")
+     */
+    private $role = [];
+
     public function __construct()
     {
         $this->trajetsParticiper = new ArrayCollection();
@@ -311,5 +316,17 @@ class Utilisateur
     {
         $identite=$this->getNom()." ".$this->getPrenom();
         return $identite;
+    }
+
+    public function getRole(): ?array
+    {
+        return $this->role;
+    }
+
+    public function setRole(array $role): self
+    {
+        $this->role = $role;
+
+        return $this;
     }
 }
