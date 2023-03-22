@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\utilisateur;
 use App\Entity\Trajet;
 use App\Form\TrajetType;
 use App\Repository\TrajetRepository;
@@ -35,6 +36,8 @@ class TrajetController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $user = $this->getUser();
+            $trajet->setIdUtilisateurAuteur($user);
             $trajetRepository->add($trajet);
             return $this->redirectToRoute('app_trajet_index', [], Response::HTTP_SEE_OTHER);
         }

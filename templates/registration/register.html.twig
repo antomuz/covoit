@@ -5,11 +5,34 @@
 {% block body %}
     <h1>Register</h1>
 
+    <table>
     {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
-        }) }}
-        {{ form_row(registrationForm.agreeTerms) }}
+
+        <tr>
+            <th>{{ form_label(registrationForm.nom) }}</th>
+            <th>{{ form_widget(registrationForm.nom) }}</th>
+        </tr>
+        <tr>
+            <th>{{ form_label(registrationForm.prenom) }}</th>
+            <th>{{ form_widget(registrationForm.prenom) }}</th>
+        </tr>
+        <tr>
+            <th>{{ form_label(registrationForm.email) }}</th>
+            <th>{{ form_widget(registrationForm.email) }}</th>
+        </tr>
+        <tr>
+            <th>{{ form_label(registrationForm.telephone) }}</th>
+            <th>{{ form_widget(registrationForm.telephone) }}</th>
+        </tr>
+        <tr>
+            <th>{{ form_label(registrationForm.modeApp) }}</th>
+            <th>{{ form_widget(registrationForm.modeApp) }}</th>
+        </tr>
+        <tr>
+            <th>{{ form_label(registrationForm.plainPassword) }}</th>
+            <th>{{ form_widget(registrationForm.plainPassword) }}</th>
+        </tr>
+    </table>
 
         <button type="submit" class="btn">Register</button>
     {{ form_end(registrationForm) }}

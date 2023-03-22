@@ -13,8 +13,6 @@ class CommentaireType extends AbstractType
     {
         $builder
             ->add('corps')
-            ->add('idUtilisateurAuteur')
-            ->add('idTrajetConcerner')
         ;
     }
 

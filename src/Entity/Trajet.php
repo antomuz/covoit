@@ -56,7 +56,7 @@ class Trajet
 
     /**
      * @ORM\ManyToOne(targetEntity=Utilisateur::class, inversedBy="trajetsCreer")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=true)
      */
     private $idUtilisateurAuteur;
 
@@ -212,6 +212,11 @@ class Trajet
         }
 
         return $this;
+    }
+
+    public function __ToString() : string
+    {
+        return $this->getVilleDepart()." - ".$this->getVilleArrivee();
     }
 
 

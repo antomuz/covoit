@@ -9,6 +9,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+use Symfony\Component\Security\Core\Security;
 
 /**
  * @Route("/utilisateur")
@@ -17,6 +19,12 @@ class UtilisateurController extends AbstractController
 {
     /**
      * @Route("/", name="app_utilisateur_index", methods={"GET"})
+     * @param Request $request
+     * @param EntityManagerInterface $em
+     * @param Security $security
+     * @return RedirectResponse|Response
+     * Require ROLE_ADMIN for  method create in this class
+     * @IsGranted("ROLE_ADMIN")
      */
     public function index(UtilisateurRepository $utilisateurRepository): Response
     {
@@ -27,6 +35,12 @@ class UtilisateurController extends AbstractController
 
     /**
      * @Route("/new", name="app_utilisateur_new", methods={"GET", "POST"})
+     * @param Request $request
+     * @param EntityManagerInterface $em
+     * @param Security $security
+     * @return RedirectResponse|Response
+     * Require ROLE_ADMIN for  method create in this class
+     * @IsGranted("ROLE_ADMIN")
      */
     public function new(Request $request, UtilisateurRepository $utilisateurRepository): Response
     {
@@ -57,6 +71,12 @@ class UtilisateurController extends AbstractController
 
     /**
      * @Route("/{id}/edit", name="app_utilisateur_edit", methods={"GET", "POST"})
+     * @param Request $request
+     * @param EntityManagerInterface $em
+     * @param Security $security
+     * @return RedirectResponse|Response
+     * Require ROLE_ADMIN for  method create in this class
+     * @IsGranted("ROLE_ADMIN")
      */
     public function edit(Request $request, Utilisateur $utilisateur, UtilisateurRepository $utilisateurRepository): Response
     {
@@ -76,6 +96,12 @@ class UtilisateurController extends AbstractController
 
     /**
      * @Route("/{id}", name="app_utilisateur_delete", methods={"POST"})
+     * @param Request $request
+     * @param EntityManagerInterface $em
+     * @param Security $security
+     * @return RedirectResponse|Response
+     * Require ROLE_ADMIN for  method create in this class
+     * @IsGranted("ROLE_ADMIN")
      */
     public function delete(Request $request, Utilisateur $utilisateur, UtilisateurRepository $utilisateurRepository): Response
     {

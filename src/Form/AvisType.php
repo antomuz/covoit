@@ -14,8 +14,6 @@ class AvisType extends AbstractType
         $builder
             ->add('nbEtoile')
             ->add('corps')
-            ->add('idUtilisateurConcerner')
-            ->add('idUtilisateurAuteur')
         ;
     }
 

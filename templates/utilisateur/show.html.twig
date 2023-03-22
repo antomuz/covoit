@@ -12,14 +12,6 @@
                 <td>{{ utilisateur.id }}</td>
             </tr>
             <tr>
-                <th>Roles</th>
-                <td>{{ utilisateur.roles ? utilisateur.roles|json_encode : '' }}</td>
-            </tr>
-            <tr>
-                <th>Password</th>
-                <td>{{ utilisateur.password }}</td>
-            </tr>
-            <tr>
                 <th>Nom</th>
                 <td>{{ utilisateur.nom }}</td>
             </tr>
@@ -37,7 +29,13 @@
             </tr>
             <tr>
                 <th>ModeApp</th>
-                <td>{{ utilisateur.modeApp }}</td>
+                <td>
+                    {% if utilisateur.modeApp == 0 %}
+                        Dark
+                    {% elseif utilisateur.modeApp == 1 %}
+                        Light
+                    {% endif %}
+                </td>
             </tr>
         </tbody>
     </table>

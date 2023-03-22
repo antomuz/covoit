@@ -18,8 +18,6 @@ class TrajetType extends AbstractType
             ->add('voiture')
             ->add('nbPlace')
             ->add('prix')
-            ->add('utilisateur_trajet')
-            ->add('idUtilisateurAuteur')
         ;
     }
 

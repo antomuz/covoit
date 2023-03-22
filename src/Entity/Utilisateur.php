@@ -371,4 +371,9 @@ class Utilisateur implements UserInterface
 
         return $this;
     }
+
+    public function __ToString() : string
+    {
+        return $this->prenom." ".$this->nom;
+    }
 }
