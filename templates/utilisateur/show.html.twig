@@ -1,30 +1,50 @@
 {% extends 'base.html.twig' %}
 
+{% block title %}Utilisateur{% endblock %}
+
 {% block body %}
-    <h1>Détails d'utilisateur <i>{{ utilisateur.prenom }}{{ utilisateur.nom }}</i> :</h1>
-    <div class="media" style="margin-top: 60px;">
-        <div class="media-body">
-            <div class="row">
-                <div class="col-sm-10">
-                    <h3 class="media-heading"><strong>{{ utilisateur.prenom }}</strong> <i>({{ utilisateur.nom }})</i></h3>
-                </div>
+    <h1>Utilisateur</h1>
 
-            </div>
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ utilisateur.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ utilisateur.nom }}</td>
+            </tr>
+            <tr>
+                <th>Prenom</th>
+                <td>{{ utilisateur.prenom }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ utilisateur.email }}</td>
+            </tr>
+            <tr>
+                <th>Telephone</th>
+                <td>{{ utilisateur.telephone }}</td>
+            </tr>
+            <tr>
+                <th>ModeApp</th>
+                <td>{{ utilisateur.modeApp }}</td>
+            </tr>
+            <tr>
+                <th>Mdp</th>
+                <td>{{ utilisateur.mdp }}</td>
+            </tr>
+            <tr>
+                <th>Role</th>
+                <td>{{ utilisateur.role ? utilisateur.role|join(', ') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
 
-            <p>
-                <strong>Email de contact :</strong> {{ utilisateur.email }}
-            </p>
-            <p>
-                <strong>telephone :</strong> {{ utilisateur.telephone }}
-            </p>
-            <p>
-                <strong>Les avis sur l'utilisateur : </strong>
-                {% for tuteur in utilisateur.tuteurs %}
-                    <p>étoiles: {{ utilisateur.nbEtoile }} *</p>
-                    <p>avis: {{ utilisateur.nbEtoile }}</p>
-                    <br><br>
-                {% endfor %}
-            </p>
-        </div>
-    </div>
+    <a href="{{ path('app_utilisateur_index') }}">back to list</a>
+
+    <a href="{{ path('app_utilisateur_edit', {'id': utilisateur.id}) }}">edit</a>
+
+    {{ include('utilisateur/_delete_form.html.twig') }}
 {% endblock %}
