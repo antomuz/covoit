@@ -2,16 +2,16 @@
     {{ form_start(form) }}
 
     <tr>
-        <th>{{ form_label(form.corps) }}</th>
+        <th>{{'convoit.corps'|trans}}</th>
         <th>{{ form_widget(form.corps) }}</th>
     </tr>
     <tr>
-        <th>{{ form_label(form.nbEtoile) }}</th>
+        <th>{{'convoit.NbEtoile'|trans}}</th>
         <th>{{ form_widget(form.nbEtoile) }}</th>
     </tr>
 
     <tr>
-        <th>{{ form_label(form.idUtilisateurConcerner) }}</th>
+        <th>{{'convoit.utilisateur_concerner'|trans}}</th>
         <th>{{ form_widget(form.idUtilisateurConcerner) }}</th>
     </tr>
 

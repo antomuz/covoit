@@ -35,7 +35,7 @@ convoit.DateHeure: Datetime
 convoit.Voiture: car
 convoit.NbPlace: places
 convoit.Prix: price
-convoit.créer_nouveau_trajet: 'create new project'
+convoit.créer_nouveau_trajet: 'create new route'
 convoit.Trajet: Route
 convoit.éditer_utilisateur: 'edit user'
 convoit.utilisateur_index: 'user list'
@@ -46,6 +46,8 @@ convoit.Telephone: phone
 convoit.creer_nouveau_utilisateur: 'create new user'
 convoit.utilisateur: user
 convoit.ModeApp: Theme
-convoit.mode_sombre: 'Dark mode'
+convoit.mode_sombre: 'pastel mode'
 convoit.mode_clair: 'Light mode'
 convoit.Commentaire_index: 'Comment list'
+convoit.utilisateur_concerner: 'User reviewed'
+convoit.trajet_concerné: 'route commented'

@@ -28,7 +28,7 @@ class RegistrationFormType extends AbstractType
             ->add('telephone', NumberType::class)
             ->add('modeApp', ChoiceType::class, [
                 'choices'  => [
-                    'Dark' => 0,
+                    'Pastel' => 0,
                     'Light' => 1,
                 ],
             ])

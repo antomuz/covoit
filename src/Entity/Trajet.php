@@ -216,7 +216,7 @@ class Trajet
 
     public function __ToString() : string
     {
-        return $this->getVilleDepart()." - ".$this->getVilleArrivee();
+        return $this->getId()." - ".$this->getVilleDepart()." ---> ".$this->getVilleArrivee();
     }
 
 
