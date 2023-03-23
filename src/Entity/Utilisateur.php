@@ -374,6 +374,6 @@ class Utilisateur implements UserInterface
 
     public function __ToString() : string
     {
-        return "no. ".$this->getId()." : ".$this->getPrenom()." ".$this->getPrenom();
+        return "no. ".$this->getId()." : ".$this->getPrenom()." ".$this->getNom();
     }
 }
