@@ -1,50 +1,51 @@
 convoit.login: Connexion
-convoit.register: Créer un compte
+convoit.register: 'Créer un compte'
 convoit.logout: Déconnexion
-convoit.liste_des_avis: liste des avis
+convoit.liste_des_avis: 'liste des avis'
 convoit.Id: Id
-convoit.NbEtoile: Nombres d'Etoile
+convoit.NbEtoile: 'Nombres d''Etoile'
 convoit.corps: corps
 convoit.action: actions
 convoit.afficher: afficher
 convoit.editer: éditer
-convoit.pas_de_donnée_trouvée: pas de donnée trouvée
-convoit.créer_nouveau: créer nouveau
-convoit.editer_avis: editer avis
-convoit.retour_liste: retour liste
-convoit.creer_nouvel_avis: creer nouvel avis
-convoit.supprimer_confirmation: êtes vous sur de vouloir supprimer ?
+convoit.pas_de_donnée_trouvée: 'pas de donnée trouvée'
+convoit.créer_nouveau: 'créer nouveau'
+convoit.editer_avis: 'editer avis'
+convoit.retour_liste: 'retour liste'
+convoit.creer_nouvel_avis: 'creer nouvel avis'
+convoit.supprimer_confirmation: 'êtes vous sur de vouloir supprimer ?'
 convoit.supprimer: supprimer
-convoit.menu_trajet: Menu trajet
-convoit.menu_utilisateur: menu utilisateur
-convoit.menu_commentaire: menu commentaire
-convoit.menu_avis: menu avis
-convoit.editer_commentaire: editer commentaire
-convoit.creer_nouveau_commentaire: creer nouveau commentaire
+convoit.menu_trajet: 'Menu trajet'
+convoit.menu_utilisateur: 'menu utilisateur'
+convoit.menu_commentaire: 'menu commentaire'
+convoit.menu_avis: 'menu avis'
+convoit.editer_commentaire: 'editer commentaire'
+convoit.creer_nouveau_commentaire: 'creer nouveau commentaire'
 convoit.commentaire: commentaire
-convoit.you_are_logged_in_as: vous êtes connecté en tant que
-convoit.please_sign_in: veuillez vou connecter
-convoit.password: mot de passe
-convoit.remember_me: se souvenir de moi
-convoit.sign_in: se connecter
+convoit.you_are_logged_in_as: 'vous êtes connecté en tant que'
+convoit.please_sign_in: 'veuillez vou connecter'
+convoit.password: 'mot de passe'
+convoit.remember_me: 'se souvenir de moi'
+convoit.sign_in: 'se connecter'
 convoit.editer_trajet: editer_trajet
-convoit.liste_des_trajets: liste des trajets
-convoit.VilleDepart: Ville de depart
-convoit.VilleArrivee: Ville d'arrivee
+convoit.liste_des_trajets: 'liste des trajets'
+convoit.VilleDepart: 'Ville de depart'
+convoit.VilleArrivee: 'Ville d''arrivee'
 convoit.DateHeure: DateHeure
 convoit.Voiture: Voiture
-convoit.NbPlace: Nombre de place
+convoit.NbPlace: 'Nombre de place'
 convoit.Prix: Prix
-convoit.créer_nouveau_trajet: créer nouveau trajet
+convoit.créer_nouveau_trajet: 'créer nouveau trajet'
 convoit.Trajet: Trajet
-convoit.éditer_utilisateur: éditer utilisateur
-convoit.utilisateur_index: liste des utilisateurs
+convoit.éditer_utilisateur: 'éditer utilisateur'
+convoit.utilisateur_index: 'liste des utilisateurs'
 convoit.Nom: Nom
 convoit.Prenom: Prenom
 convoit.Email: Email
 convoit.Telephone: Telephone
-convoit.creer_nouveau_utilisateur: creer nouvel utilisateur
+convoit.creer_nouveau_utilisateur: 'creer nouvel utilisateur'
 convoit.utilisateur: utilisateur
 convoit.ModeApp: Theme
-convoit.mode_sombre: mode sombre
-convoit.mode_clair: mode clair
+convoit.mode_sombre: 'mode sombre'
+convoit.mode_clair: 'mode clair'
+convoit.Commentaire_index: 'liste des commentaires'
