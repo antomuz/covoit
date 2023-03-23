@@ -7,5 +7,9 @@
 
     {{ include('avis/_form.html.twig') }}
 
-    <a href="{{ path('app_avis_index') }}">back to list</a>
+    {% if is_granted('ROLE_ADMIN') %}
+        <a href="{{ path('app_avis_index') }}">back to list</a>
+    {% elseif is_granted('ROLE_USER') %}
+        <a href="{{ path('app_avis_user') }}">back to list</a>
+    {% endif %}
 {% endblock %}

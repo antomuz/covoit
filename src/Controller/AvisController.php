@@ -34,6 +34,16 @@ class AvisController extends AbstractController
     }
 
     /**
+     * @Route("/utilisateur", name="app_avis_user", methods={"GET", "POST"})
+     */
+    public function avisUser(AvisRepository $avisRepository): Response
+    {
+        return $this->render('avis/avisUser.html.twig', [
+            'avis' => $avisRepository->findAll(),
+        ]);
+    }
+
+    /**
      * @Route("/new", name="app_avis_new", methods={"GET", "POST"})
      */
     public function new(Request $request, AvisRepository $avisRepository): Response
@@ -42,9 +52,16 @@ class AvisController extends AbstractController
         $form = $this->createForm(AvisType::class, $avi);
         $form->handleRequest($request);
 
+        if ($this->isGranted("ROLE_ADMIN")){
+            $route = 'app_avis_index';
+        }
+        else {$route = 'app_avis_user';}
+
         if ($form->isSubmitted() && $form->isValid()) {
+            $user = $this->getUser();
+            $avi->setIdUtilisateurAuteur($user);
             $avisRepository->add($avi);
-            return $this->redirectToRoute('app_avis_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute($route, [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->render('avis/new.html.twig', [
@@ -71,9 +88,14 @@ class AvisController extends AbstractController
         $form = $this->createForm(AvisType::class, $avi);
         $form->handleRequest($request);
 
+        if ($this->isGranted("ROLE_ADMIN")){
+            $route = 'app_avis_index';
+        }
+        else {$route = 'app_avis_user';}
+
         if ($form->isSubmitted() && $form->isValid()) {
             $avisRepository->add($avi);
-            return $this->redirectToRoute('app_avis_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute($route, [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->render('avis/edit.html.twig', [
@@ -91,6 +113,11 @@ class AvisController extends AbstractController
             $avisRepository->remove($avi);
         }
 
-        return $this->redirectToRoute('app_avis_index', [], Response::HTTP_SEE_OTHER);
+        if ($this->isGranted("ROLE_ADMIN")){
+            $route = 'app_avis_index';
+        }
+        else {$route = 'app_avis_user';}
+
+        return $this->redirectToRoute($route, [], Response::HTTP_SEE_OTHER);
     }
 }

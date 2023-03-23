@@ -52,11 +52,16 @@ class CommentaireController extends AbstractController
         $form = $this->createForm(CommentaireType::class, $commentaire);
         $form->handleRequest($request);
 
+        if ($this->isGranted("ROLE_ADMIN")){
+            $route = 'app_commentaire_index';
+        }
+        else {$route = 'app_commentaire_user';}
+
         if ($form->isSubmitted() && $form->isValid()) {
             $user = $this->getUser();
             $commentaire->setIdUtilisateurAuteur($user);
             $commentaireRepository->add($commentaire);
-            return $this->redirectToRoute('app_commentaire_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute($route, [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->render('commentaire/new.html.twig', [
@@ -83,9 +88,14 @@ class CommentaireController extends AbstractController
         $form = $this->createForm(CommentaireType::class, $commentaire);
         $form->handleRequest($request);
 
+        if ($this->isGranted("ROLE_ADMIN")){
+            $route = 'app_commentaire_index';
+        }
+        else {$route = 'app_commentaire_user';}
+
         if ($form->isSubmitted() && $form->isValid()) {
             $commentaireRepository->add($commentaire);
-            return $this->redirectToRoute('app_commentaire_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute($route, [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->render('commentaire/edit.html.twig', [
@@ -103,6 +113,11 @@ class CommentaireController extends AbstractController
             $commentaireRepository->remove($commentaire);
         }
 
-        return $this->redirectToRoute('app_commentaire_index', [], Response::HTTP_SEE_OTHER);
+        if ($this->isGranted("ROLE_ADMIN")){
+            $route = 'app_commentaire_index';
+        }
+        else {$route = 'app_commentaire_user';}
+
+        return $this->redirectToRoute($route, [], Response::HTTP_SEE_OTHER);
     }
 }
