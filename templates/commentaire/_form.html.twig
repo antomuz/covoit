@@ -1,4 +1,13 @@
 {{ form_start(form) }}
-    {{ form_widget(form) }}
+<table>
+    <tr>
+        <th>{{ form_label(form.corps) }}</th>
+        <th>{{ form_widget(form.corps) }}</th>
+    </tr>
+    <tr>
+        <th>{{ form_label(form.idTrajetConcerner) }}</th>
+        <th>{{ form_widget(form.idTrajetConcerner) }}</th>
+    </tr>
+    <table>
     <button class="btn">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}

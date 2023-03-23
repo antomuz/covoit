@@ -9,6 +9,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Core\Security;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 /**
  * @Route("/commentaire")
@@ -17,10 +19,26 @@ class CommentaireController extends AbstractController
 {
     /**
      * @Route("/", name="app_commentaire_index", methods={"GET"})
+     * @param Request $request
+     * @param EntityManagerInterface $em
+     * @param Security $security
+     * @return RedirectResponse|Response
+     * Require ROLE_ADMIN for  method create in this class
+     * @IsGranted("ROLE_ADMIN")
      */
     public function index(CommentaireRepository $commentaireRepository): Response
     {
         return $this->render('commentaire/index.html.twig', [
+            'commentaires' => $commentaireRepository->findAll(),
+        ]);
+    }
+
+    /**
+     * @Route("/utilisateur", name="app_commentaire_user", methods={"GET", "POST"})
+     */
+    public function commentairesUser(CommentaireRepository $commentaireRepository): Response
+    {
+        return $this->render('commentaire/commentairesUser.html.twig', [
             'commentaires' => $commentaireRepository->findAll(),
         ]);
     }
@@ -35,6 +53,8 @@ class CommentaireController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $user = $this->getUser();
+            $commentaire->setIdUtilisateurAuteur($user);
             $commentaireRepository->add($commentaire);
             return $this->redirectToRoute('app_commentaire_index', [], Response::HTTP_SEE_OTHER);
         }

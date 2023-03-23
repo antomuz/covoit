@@ -46,6 +46,25 @@ class TrajetRepository extends ServiceEntityRepository
             $this->_em->flush();
         }
     }
+    /**
+     * @throws ORMException
+     * @throws OptimisticLockException
+     */
+    public function findAllGreaterThanDateNow () : array
+    {
+        $entityManager = $this->getEntityManager();
+
+        $date = date("Y-m-d H:i:s");
+
+        $query = $entityManager ->createQuery(
+            'SELECT t.id, IDENTITY(t.idUtilisateurAuteur) as auteur, t.villeDepart, t.villeArrivee, t.dateHeure, t.voiture, t.nbPlace, t.prix 
+            FROM  App\Entity\Trajet t
+            WHERE t.dateHeure > :date
+            ORDER BY t.dateHeure'
+        )->setParameter('date', $date);
+
+        return $query->getArrayResult();
+    }
 
     // /**
     //  * @return Trajet[] Returns an array of Trajet objects

@@ -6,10 +6,13 @@ use App\Entity\utilisateur;
 use App\Entity\Trajet;
 use App\Form\TrajetType;
 use App\Repository\TrajetRepository;
+use Faker\Core\DateTime;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Core\Security;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 /**
  * @Route("/trajet")
@@ -18,6 +21,12 @@ class TrajetController extends AbstractController
 {
     /**
      * @Route("/", name="app_trajet_index", methods={"GET"})
+     * @param Request $request
+     * @param EntityManagerInterface $em
+     * @param Security $security
+     * @return RedirectResponse|Response
+     * Require ROLE_ADMIN for  method create in this class
+     * @IsGranted("ROLE_ADMIN")
      */
     public function index(TrajetRepository $trajetRepository): Response
     {
@@ -26,6 +35,15 @@ class TrajetController extends AbstractController
         ]);
     }
 
+    /**
+     * @Route("/futur", name="app_trajet_a_venir", methods={"GET"})
+     */
+    public function trajetAVenir (TrajetRepository $trajetRepository) : Response
+    {
+        return $this->render('trajet/index.html.twig', [
+            'trajets' => $trajetRepository->findAllGreaterThanDateNow(),
+        ]);
+    }
     /**
      * @Route("/new", name="app_trajet_new", methods={"GET", "POST"})
      */
@@ -88,4 +106,5 @@ class TrajetController extends AbstractController
 
         return $this->redirectToRoute('app_trajet_index', [], Response::HTTP_SEE_OTHER);
     }
+
 }
