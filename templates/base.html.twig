@@ -22,7 +22,7 @@
                 <a class="navbar-brand" href="{{ path('app_avis_index') }}">Menu Avis</a>
             </div>
         {% endif %}
-        {% if is_granted('ROLE_USER') %}
+        {% if is_granted('ROLE_USER') and not is_granted('ROLE_ADMIN') %}
             <div class="navbar-header">
                 <a class="navbar-brand" href="{{ path('app_trajet_a_venir') }}">Menu Trajet</a>
                 <a class="navbar-brand" href="{{ path('app_utilisateur_show', {'id': app.user.id}) }}">Menu Utilisateur</a>
@@ -37,6 +37,7 @@
                     <div>
                         {% if not app.user %}
                             <a href="{{ path('app_login') }}" class="btn btn-default navbar-btn">Se connecter</a>
+                            <a href="{{ path('app_register') }}" class="btn btn-default navbar-btn">créer un compte</a>
                         {% endif %}
                         {% if app.user %}
                             <a href="{{ path('app_logout') }}" class="btn btn-default navbar-btn">Se deconnecter</a>

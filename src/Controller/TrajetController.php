@@ -31,7 +31,7 @@ class TrajetController extends AbstractController
     public function index(TrajetRepository $trajetRepository): Response
     {
         return $this->render('trajet/index.html.twig', [
-            'trajets' => $trajetRepository->findAll(),
+            'trajets' => $trajetRepository->findAllTrajet(),
         ]);
     }
 
@@ -53,11 +53,16 @@ class TrajetController extends AbstractController
         $form = $this->createForm(TrajetType::class, $trajet);
         $form->handleRequest($request);
 
+        if ($this->isGranted("ROLE_ADMIN")){
+            $route = 'app_trajet_index';
+        }
+        else {$route = 'app_trajet_a_venir';}
+
         if ($form->isSubmitted() && $form->isValid()) {
             $user = $this->getUser();
             $trajet->setIdUtilisateurAuteur($user);
             $trajetRepository->add($trajet);
-            return $this->redirectToRoute('app_trajet_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute($route, [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->render('trajet/new.html.twig', [
@@ -84,9 +89,15 @@ class TrajetController extends AbstractController
         $form = $this->createForm(TrajetType::class, $trajet);
         $form->handleRequest($request);
 
+        if ($this->isGranted("ROLE_ADMIN")){
+            $route = 'app_trajet_index';
+        }
+        else {$route = 'app_trajet_a_venir';}
+
+
         if ($form->isSubmitted() && $form->isValid()) {
             $trajetRepository->add($trajet);
-            return $this->redirectToRoute('app_trajet_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute($route, [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->render('trajet/edit.html.twig', [
@@ -104,7 +115,12 @@ class TrajetController extends AbstractController
             $trajetRepository->remove($trajet);
         }
 
-        return $this->redirectToRoute('app_trajet_index', [], Response::HTTP_SEE_OTHER);
+        if ($this->isGranted("ROLE_ADMIN")){
+            $route = 'app_trajet_index';
+        }
+        else {$route = 'app_trajet_a_venir';}
+
+        return $this->redirectToRoute($route, [], Response::HTTP_SEE_OTHER);
     }
 
 }

@@ -66,6 +66,23 @@ class TrajetRepository extends ServiceEntityRepository
         return $query->getArrayResult();
     }
 
+    /**
+     * @throws ORMException
+     * @throws OptimisticLockException
+     */
+    public function findAllTrajet () : array
+    {
+        $entityManager = $this->getEntityManager();
+
+        $query = $entityManager ->createQuery(
+            'SELECT t.id, IDENTITY(t.idUtilisateurAuteur) as auteur, t.villeDepart, t.villeArrivee, t.dateHeure, t.voiture, t.nbPlace, t.prix 
+            FROM  App\Entity\Trajet t
+            ORDER BY t.id'
+        );
+
+        return $query->getArrayResult();
+    }
+
     // /**
     //  * @return Trajet[] Returns an array of Trajet objects
     //  */
