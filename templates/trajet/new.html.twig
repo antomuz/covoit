@@ -3,14 +3,14 @@
 {% block title %}New Trajet{% endblock %}
 
 {% block body %}
-    <h1>Create new Trajet</h1>
+    <h1>{{'convoit.créer_nouveau_trajet'|trans}}</h1>
 
     {{ include('trajet/_form.html.twig') }}
 
     {% if is_granted('ROLE_ADMIN') %}
-        <a href="{{ path('app_trajet_index') }}">back to list</a>
+        <a href="{{ path('app_trajet_index') }}">{{'convoit.retour_liste'|trans}}</a>
     {% elseif is_granted('ROLE_USER') %}
-        <a href="{{ path('app_trajet_a_venir') }}">back to list</a>
+        <a href="{{ path('app_trajet_a_venir') }}">{{'convoit.retour_liste'|trans}}</a>
     {% endif %}
 
 {% endblock %}

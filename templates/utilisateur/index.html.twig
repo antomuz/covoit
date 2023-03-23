@@ -3,16 +3,16 @@
 {% block title %}Utilisateur index{% endblock %}
 
 {% block body %}
-    <h1>Utilisateur index</h1>
+    <h1>{{'convoit.utilisateur_index'|trans}}</h1>
 
     <table class="table">
         <thead>
             <tr>
-                <th>Nom</th>
-                <th>Prenom</th>
-                <th>Email</th>
-                <th>Telephone</th>
-                <th>actions</th>
+                <th>{{'convoit.Nom'|trans}}</th>
+                <th>{{'convoit.Prenom'|trans}}</th>
+                <th>{{'convoit.Email'|trans}}</th>
+                <th>{{'convoit.Telephone'|trans}}</th>
+                <th>{{'convoit.action'|trans}}</th>
             </tr>
         </thead>
         <tbody>
@@ -23,12 +23,12 @@
                 <td>{{ utilisateur.email }}</td>
                 <td>{{ utilisateur.telephone }}</td>
                 <td>
-                    <a href="{{ path('app_utilisateur_show', {'id': utilisateur.id}) }}">show</a>
+                    <a href="{{ path('app_utilisateur_show', {'id': utilisateur.id}) }}">{{'convoit.afficher'|trans}}</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="9">no records found</td>
+                <td colspan="9">{{'convoit.pas_de_donnée_trouvée'|trans}}</td>
             </tr>
         {% endfor %}
         </tbody>

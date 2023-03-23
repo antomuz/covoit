@@ -3,24 +3,24 @@
 {% block title %}Commentaire{% endblock %}
 
 {% block body %}
-    <h1>Commentaire</h1>
+    <h1>{{'convoit.commentaire'|trans}}</h1>
 
     <table class="table">
         <tbody>
             <tr>
-                <th>Id</th>
+                <th>{{'convoit.Id'|trans}}</th>
                 <td>{{ commentaire.id }}</td>
             </tr>
             <tr>
-                <th>Corps</th>
+                <th>{{'convoit.corps'|trans}}</th>
                 <td>{{ commentaire.corps }}</td>
             </tr>
         </tbody>
     </table>
     {% if is_granted('ROLE_ADMIN') %}
-        <a href="{{ path('app_commentaire_index') }}">back to list</a>
+        <a href="{{ path('app_commentaire_index') }}">{{'convoit.retour_liste'|trans}}</a>
     {% elseif is_granted('ROLE_USER') %}
-        <a href="{{ path('app_commentaire_user') }}">back to list</a>
+        <a href="{{ path('app_commentaire_user') }}">{{'convoit.retour_liste'|trans}}t</a>
     {% endif %}
 
     {{ include('commentaire/_delete_form.html.twig') }}

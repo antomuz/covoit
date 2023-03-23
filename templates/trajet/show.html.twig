@@ -3,36 +3,36 @@
 {% block title %}Trajet{% endblock %}
 
 {% block body %}
-    <h1>Trajet</h1>
+    <h1>{{'convoit.Trajet'|trans}}</h1>
 
     <table class="table">
         <tbody>
             <tr>
-                <th>Id</th>
+                <th>{{'convoit.Id'|trans}}</th>
                 <td>{{ trajet.id }}</td>
             </tr>
             <tr>
-                <th>VilleDepart</th>
+                <th>{{'convoit.VilleDepart'|trans}}</th>
                 <td>{{ trajet.villeDepart }}</td>
             </tr>
             <tr>
-                <th>VilleArrivee</th>
+                <th>{{'convoit.VilleArrivee'|trans}}</th>
                 <td>{{ trajet.villeArrivee }}</td>
             </tr>
             <tr>
-                <th>DateHeure</th>
+                <th>{{'convoit.DateHeure'|trans}}</th>
                 <td>{{ trajet.dateHeure ? trajet.dateHeure|date('Y-m-d H:i:s') : '' }}</td>
             </tr>
             <tr>
-                <th>Voiture</th>
+                <th>{{'convoit.Voiture'|trans}}</th>
                 <td>{{ trajet.voiture }}</td>
             </tr>
             <tr>
-                <th>NbPlace</th>
+                <th>{{'convoit.NbPlace'|trans}}</th>
                 <td>{{ trajet.nbPlace }}</td>
             </tr>
             <tr>
-                <th>Prix</th>
+                <th>{{'convoit.Prix'|trans}}</th>
                 <td>{{ trajet.prix }}</td>
             </tr>
         </tbody>
@@ -41,9 +41,9 @@
 
 
     {% if is_granted('ROLE_ADMIN') %}
-        <a href="{{ path('app_trajet_index') }}">back to list</a>
+        <a href="{{ path('app_trajet_index') }}">{{'convoit.retour_liste'|trans}}</a>
     {% elseif is_granted('ROLE_USER') %}
-    <a href="{{ path('app_trajet_a_venir') }}">back to list</a>
+    <a href="{{ path('app_trajet_a_venir') }}">{{'convoit.retour_liste'|trans}}</a>
     {% endif %}
     {{ include('trajet/_delete_form.html.twig') }}
 {% endblock %}

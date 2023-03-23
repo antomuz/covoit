@@ -1,0 +1,50 @@
+convoit.login: login
+convoit.register: register
+convoit.logout: logout
+convoit.liste_des_avis: reviews list
+convoit.Id: Id
+convoit.NbEtoile: Stars
+convoit.corps: body
+convoit.action: action
+convoit.afficher: show
+convoit.editer: edit
+convoit.pas_de_donnée_trouvée: no data found
+convoit.créer_nouveau: create new
+convoit.editer_avis: edit review
+convoit.retour_liste: back to list
+convoit.creer_nouvel_avis: create new review
+convoit.supprimer_confirmation: are you sure you want to delete ?
+convoit.supprimer: delete
+convoit.menu_trajet: route menu
+convoit.menu_utilisateur: User menu
+convoit.menu_commentaire: Comment menu
+convoit.menu_avis: review menu
+convoit.editer_commentaire: edit comment
+convoit.creer_nouveau_commentaire: create new comment
+convoit.commentaire: comment
+convoit.you_are_logged_in_as: you are logged in as
+convoit.please_sign_in: please sign in
+convoit.password: password
+convoit.remember_me: remember me
+convoit.sign_in: sign in
+convoit.editer_trajet: edit route
+convoit.liste_des_trajets: route list
+convoit.VilleDepart: starting city
+convoit.VilleArrivee: arriving city
+convoit.DateHeure: Datetime
+convoit.Voiture: car
+convoit.NbPlace: places
+convoit.Prix: price
+convoit.créer_nouveau_trajet: create new project
+convoit.Trajet: Route
+convoit.éditer_utilisateur: edit user
+convoit.utilisateur_index: user list
+convoit.Nom: Name
+convoit.Prenom: First name
+convoit.Email: mail
+convoit.Telephone: phone
+convoit.creer_nouveau_utilisateur: create new user
+convoit.utilisateur: user
+convoit.ModeApp: Theme
+convoit.mode_sombre: Dark mode
+convoit.mode_clair: Light mode

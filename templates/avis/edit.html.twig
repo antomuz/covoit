@@ -3,14 +3,14 @@
 {% block title %}Edit Avis{% endblock %}
 
 {% block body %}
-    <h1>Edit Avis</h1>
+    <h1>{{'convoit.editer_avis'|trans}}</h1>
 
     {{ include('avis/_form.html.twig', {'button_label': 'Update'}) }}
 
     {% if is_granted('ROLE_ADMIN') %}
-        <a href="{{ path('app_avis_index') }}">back to list</a>
+        <a href="{{ path('app_avis_index') }}">{{'convoit.retour_liste'|trans}}</a>
     {% elseif is_granted('ROLE_USER') %}
-        <a href="{{ path('app_avis_user') }}">back to list</a>
+        <a href="{{ path('app_avis_user') }}">{{'convoit.retour_liste'|trans}}t</a>
     {% endif %}
 
     {{ include('avis/_delete_form.html.twig') }}

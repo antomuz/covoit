@@ -1,21 +1,21 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Trajet index{% endblock %}
+{% block title %}{{'convoit.liste_des_trajets'|trans}}{% endblock %}
 
 {% block body %}
-    <h1>Liste des Trajets</h1>
+    <h1>{{'convoit.liste_des_trajets'|trans}}</h1>
 
     <table class="table">
         <thead>
             <tr>
-                <th>#</th>
-                <th>VilleDepart</th>
-                <th>VilleArrivee</th>
-                <th>DateHeure</th>
-                <th>Voiture</th>
-                <th>NbPlace</th>
-                <th>Prix</th>
-                <th>actions</th>
+                <th>{{'convoit.Id'|trans}}</th>
+                <th>{{'convoit.VilleDepart'|trans}}</th>
+                <th>{{'convoit.VilleArrivee'|trans}}</th>
+                <th>{{'convoit.DateHeure'|trans}}</th>
+                <th>{{'convoit.Voiture'|trans}}</th>
+                <th>{{'convoit.NbPlace'|trans}}</th>
+                <th>{{'convoit.Prix'|trans}}</th>
+                <th>{{'convoit.action'|trans}}</th>
             </tr>
         </thead>
         <tbody>
@@ -29,12 +29,12 @@
                 <td>{{ trajet.nbPlace }}</td>
                 <td>{{ trajet.prix }}</td>
                 <td>
-                    <a href="{{ path('app_trajet_show', {'id': trajet.id}) }}">show</a>
+                    <a href="{{ path('app_trajet_show', {'id': trajet.id}) }}">{{'convoit.afficher'|trans}}</a>
 
 
                     {% if (app.user and app.user.id == trajet.auteur) or is_granted('ROLE_ADMIN')  %}
 
-                        <a href="{{ path('app_trajet_edit', {'id': trajet.id}) }}">edit</a>
+                        <a href="{{ path('app_trajet_edit', {'id': trajet.id}) }}">{{'convoit.editer'|trans}}</a>
 
                     {% endif %}
 
@@ -43,13 +43,13 @@
             </tr>
         {% else %}
             <tr>
-                <td colspan="8">no records found</td>
+                <td colspan="8">{{'convoit.pas_de_donnée_trouvée'|trans}}</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
     {% if app.user %}
-        <a href="{{ path('app_trajet_new') }}">Create new</a>
+        <a href="{{ path('app_trajet_new') }}">{{'convoit.créer_nouveau'|trans}}</a>
     {% endif %}
 {% endblock %}

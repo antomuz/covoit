@@ -3,37 +3,37 @@
 {% block title %}Utilisateur{% endblock %}
 
 {% block body %}
-    <h1>Utilisateur</h1>
+    <h1>{{'convoit.utilisateur'|trans}}</h1>
 
     <table class="table">
         <tbody>
             <tr>
-                <th>Id</th>
+                <th>{{'convoit.Id'|trans}}</th>
                 <td>{{ utilisateur.id }}</td>
             </tr>
             <tr>
-                <th>Nom</th>
+                <th>{{'convoit.Nom'|trans}}</th>
                 <td>{{ utilisateur.nom }}</td>
             </tr>
             <tr>
-                <th>Prenom</th>
+                <th>{{'convoit.Prenom'|trans}}</th>
                 <td>{{ utilisateur.prenom }}</td>
             </tr>
             <tr>
-                <th>Email</th>
+                <th>{{'convoit.Email'|trans}}</th>
                 <td>{{ utilisateur.email }}</td>
             </tr>
             <tr>
-                <th>Telephone</th>
+                <th>{{'convoit.Telephone'|trans}}</th>
                 <td>{{ utilisateur.telephone }}</td>
             </tr>
             <tr>
-                <th>ModeApp</th>
+                <th>{{'convoit.ModeApp'|trans}}</th>
                 <td>
                     {% if utilisateur.modeApp == 0 %}
-                        Dark
+                        {{'convoit.mode_sombre'|trans}}
                     {% elseif utilisateur.modeApp == 1 %}
-                        Light
+                        {{'convoit.mode_clair'|trans}}
                     {% endif %}
                 </td>
             </tr>
@@ -41,9 +41,9 @@
     </table>
 
     {% if is_granted('ROLE_ADMIN') %}
-    <a href="{{ path('app_utilisateur_index') }}">back to list</a>
+    <a href="{{ path('app_utilisateur_index') }}">{{'convoit.retour_liste'|trans}}</a>
 
-    <a href="{{ path('app_utilisateur_edit', {'id': utilisateur.id}) }}">edit</a>
+    <a href="{{ path('app_utilisateur_edit', {'id': utilisateur.id}) }}">{{'convoit.editer'|trans}}</a>
     {% endif %}
     {{ include('utilisateur/_delete_form.html.twig') }}
 {% endblock %}

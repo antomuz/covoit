@@ -3,14 +3,14 @@
 {% block title %}Commentaire index{% endblock %}
 
 {% block body %}
-    <h1>Commentaire index</h1>
+    <h1>{{'convoit.Id'|trans}}</h1>
 
     <table class="table">
         <thead>
             <tr>
-                <th>#</th>
-                <th>Corps</th>
-                <th>actions</th>
+                <th>{{'convoit.Id'|trans}}</th>
+                <th>{{'convoit.corps'|trans}}</th>
+                <th>{{'convoit.action'|trans}}</th>
             </tr>
         </thead>
         <tbody>
@@ -19,17 +19,17 @@
                 <td>{{ commentaire.id }}</td>
                 <td>{{ commentaire.corps }}</td>
                 <td>
-                    <a href="{{ path('app_commentaire_show', {'id': commentaire.id}) }}">show</a>
-                    <a href="{{ path('app_commentaire_edit', {'id': commentaire.id}) }}">edit</a>
+                    <a href="{{ path('app_commentaire_show', {'id': commentaire.id}) }}">{{'convoit.afficher'|trans}}</a>
+                    <a href="{{ path('app_commentaire_edit', {'id': commentaire.id}) }}">{{'convoit.editer'|trans}}</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="3">no records found</td>
+                <td colspan="3">{{'convoit.pas_de_donnée_trouvée'|trans}}</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
-    <a href="{{ path('app_commentaire_new') }}">ajout commentaire</a>
+    <a href="{{ path('app_commentaire_new') }}">{{'convoit.créer_nouveau'|trans}}</a>
 
 {% endblock %}

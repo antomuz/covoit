@@ -15,7 +15,7 @@ use Symfony\Component\Security\Core\Security;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 /**
- * @Route("/trajet")
+ * @Route("/{_locale}/trajet")
  */
 class TrajetController extends AbstractController
 {

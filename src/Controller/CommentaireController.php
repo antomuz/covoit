@@ -13,7 +13,7 @@ use Symfony\Component\Security\Core\Security;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 /**
- * @Route("/commentaire")
+ * @Route("/{_locale}/commentaire")
  */
 class CommentaireController extends AbstractController
 {

@@ -17,13 +17,23 @@ use Symfony\Contracts\Translation\TranslatorInterface;
 class RegistrationController extends AbstractController
 {
     /**
-     * @Route("/register", name="app_register")
+     * @Route("/{_locale}/register", name="app_register")
      */
     public function register(Request $request, UserPasswordEncoderInterface $userPasswordEncoder, GuardAuthenticatorHandler $guardHandler, UtilisateurAuthenticator $authenticator, EntityManagerInterface $entityManager): Response
     {
         $user = new Utilisateur();
         $form = $this->createForm(RegistrationFormType::class, $user);
         $form->handleRequest($request);
+
+        if ($this->isGranted("ROLE_ADMIN")){
+            $route = 'app_trajet_index';
+        }
+        else {$route = 'app_trajet_a_venir';}
+
+        if ($this->getUser()) {
+
+            return $this->redirectToRoute($route);
+        }
 
         if ($form->isSubmitted() && $form->isValid()) {
             // encode the plain password

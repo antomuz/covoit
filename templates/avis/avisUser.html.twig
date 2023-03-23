@@ -3,15 +3,15 @@
 {% block title %}Avis index{% endblock %}
 
 {% block body %}
-    <h1>Avis</h1>
+    <h1>{{'convoit.liste_des_avis'|trans}}</h1>
 
     <table class="table">
         <thead>
         <tr>
-            <th>#</th>
-            <th>NbEtoile</th>
-            <th>Corps</th>
-            <th>actions</th>
+            <th>{{'convoit.Id'|trans}}</th>
+            <th>{{'convoit.NbEtoile'|trans}}</th>
+            <th>{{'convoit.corps'|trans}}</th>
+            <th>{{'convoit.action'|trans}}</th>
         </tr>
         </thead>
         <tbody>
@@ -21,17 +21,17 @@
                 <td>{{ avi.nbEtoile }}</td>
                 <td>{{ avi.corps }}</td>
                 <td>
-                    <a href="{{ path('app_avis_show', {'id': avi.id}) }}">show</a>
-                    <a href="{{ path('app_avis_edit', {'id': avi.id}) }}">edit</a>
+                    <a href="{{ path('app_avis_show', {'id': avi.id}) }}">{{'convoit.afficher'|trans}}</a>
+                    <a href="{{ path('app_avis_edit', {'id': avi.id}) }}">{{'convoit.editer'|trans}}</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="4">no records found</td>
+                <td colspan="4">{{'convoit.pas_de_donnée_trouvée'|trans}}</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
-    <a href="{{ path('app_avis_new') }}">ajout avis</a>
+    <a href="{{ path('app_avis_new') }}">{{'convoit.créer_nouveau'|trans}}</a>
 
 {% endblock %}

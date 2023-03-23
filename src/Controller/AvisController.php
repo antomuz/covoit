@@ -13,7 +13,7 @@ use Symfony\Component\Security\Core\Security;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 /**
- * @Route("/avis")
+ * @Route("/{_locale}/avis")
  */
 class AvisController extends AbstractController
 {

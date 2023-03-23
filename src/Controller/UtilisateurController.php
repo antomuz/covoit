@@ -13,7 +13,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Component\Security\Core\Security;
 
 /**
- * @Route("/utilisateur")
+ * @Route("/{_locale}/utilisateur")
  */
 class UtilisateurController extends AbstractController
 {

@@ -8,24 +8,24 @@
     <table class="table">
         <tbody>
             <tr>
-                <th>Id</th>
+                <th>{{'convoit.Id'|trans}}</th>
                 <td>{{ avi.id }}</td>
             </tr>
             <tr>
-                <th>NbEtoile</th>
+                <th>{{'convoit.NbEtoile'|trans}}</th>
                 <td>{{ avi.nbEtoile }}</td>
             </tr>
             <tr>
-                <th>Corps</th>
+                <th>{{'convoit.corps'|trans}}</th>
                 <td>{{ avi.corps }}</td>
             </tr>
         </tbody>
     </table>
 
     {% if is_granted('ROLE_ADMIN') %}
-        <a href="{{ path('app_avis_index') }}">back to list</a>
+        <a href="{{ path('app_avis_index') }}">{{'convoit.retour_liste'|trans}}</a>
     {% elseif is_granted('ROLE_USER') %}
-        <a href="{{ path('app_avis_user') }}">back to list</a>
+        <a href="{{ path('app_avis_user') }}">{{'convoit.retour_liste'|trans}}</a>
     {% endif %}
 
 
