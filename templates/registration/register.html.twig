@@ -9,27 +9,30 @@
     {{ form_start(registrationForm) }}
 
         <tr>
-            <th>{{ form_label(registrationForm.nom) }}</th>
+            <th>{{'convoit.Nom'|trans}}</th>
             <th>{{ form_widget(registrationForm.nom) }}</th>
         </tr>
         <tr>
-            <th>{{ form_label(registrationForm.prenom) }}</th>
+
+            <th>{{'convoit.Prenom'|trans}}</th>
             <th>{{ form_widget(registrationForm.prenom) }}</th>
         </tr>
         <tr>
-            <th>{{ form_label(registrationForm.email) }}</th>
+            <th>{{'convoit.Email'|trans}}</th>
             <th>{{ form_widget(registrationForm.email) }}</th>
         </tr>
         <tr>
-            <th>{{ form_label(registrationForm.telephone) }}</th>
+            <th>{{'convoit.Telephone'|trans}}</th>
             <th>{{ form_widget(registrationForm.telephone) }}</th>
         </tr>
         <tr>
-            <th>{{ form_label(registrationForm.modeApp) }}</th>
+
+            <th>{{'convoit.ModeApp'|trans}}</th>
             <th>{{ form_widget(registrationForm.modeApp) }}</th>
         </tr>
         <tr>
-            <th>{{ form_label(registrationForm.plainPassword) }}</th>
+
+            <th>{{'convoit.password'|trans}}</th>
             <th>{{ form_widget(registrationForm.plainPassword) }}</th>
             <th>{{ form_errors(registrationForm.plainPassword) }}</th>
         </tr>

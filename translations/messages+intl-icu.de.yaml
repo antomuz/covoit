@@ -1,0 +1,53 @@
+convoit.liste_des_avis: Liste der Rezensionen
+convoit.Id: Kennung
+convoit.NbEtoile: Anzahl Sterne
+convoit.corps: Hauptteil
+convoit.action: Aktie
+convoit.afficher: Anzeige
+convoit.editer: Bearbeiten
+convoit.pas_de_donnée_trouvée: Keine Daten gefunden
+convoit.créer_nouveau: Erstelle neu
+convoit.editer_avis: Bewertung bearbeiten
+convoit.retour_liste: zurück zur Liste
+convoit.creer_nouvel_avis: eine neue Bewertung erstellen
+convoit.supprimer_confirmation: Sind sie sicher, dass Sie lôschen möchten?
+convoit.supprimer: Löschen
+convoit.utilisateur_concerner: betroffener Benutzer
+convoit.menu_trajet: Route
+convoit.menu_utilisateur: Benutzer
+convoit.menu_commentaire: Kommentar
+convoit.menu_avis: Notiz
+convoit.login: Einloggen
+convoit.register: Registrieren
+convoit.logout: Austragen
+convoit.editer_commentaire: Kommentar bearbeiten
+convoit.Commentaire_index: Liste des Kommentare
+convoit.creer_nouveau_commentaire: neuen Kommentar erstellen
+convoit.commentaire: Kommentar
+convoit.trajet_concerné: Fahrt betroffen
+convoit.you_are_logged_in_as: Du bist eingeloggt als
+convoit.please_sign_in: Bitte loggen Sie sich ein
+convoit.password: Passwort
+convoit.remember_me: Mich erinnern
+convoit.sign_in: Einloggen
+convoit.editer_trajet: Strecke bearbeiten
+convoit.liste_des_trajets: Liste des Routen
+convoit.VilleDepart: Abfahrtsort
+convoit.VilleArrivee: Ankunftsort
+convoit.DateHeure: Datum und Stunde
+convoit.Voiture: Auto
+convoit.NbPlace: Anzahl des Plätze
+convoit.Prix: Preis
+convoit.créer_nouveau_trajet: Eine neue Strecke erstellen
+convoit.Trajet: Route
+convoit.éditer_utilisateur: Benutzer berbeiten
+convoit.utilisateur_index: Benutzerliste
+convoit.Nom: Name
+convoit.Prenom: Vorname
+convoit.Email: Email
+convoit.Telephone: Telefon
+convoit.creer_nouveau_utilisateur: Einen neuen Benutzer anlegen
+convoit.utilisateur: Benutzer
+convoit.ModeApp: Thema
+convoit.mode_sombre: Pastell Mode
+convoit.mode_clair: Lichtmodus
